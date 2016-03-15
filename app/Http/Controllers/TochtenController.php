@@ -27,9 +27,9 @@ class TochtenController extends Controller {
     */
    public function store()
    {
-     $tocht = Request::all();
-     Tocht::create($tocht);
-     return redirect('tochten');
+   	$tocht=Request::all();
+   	Tochten::create($tocht);
+   	return redirect('tochten');
    }
    /**
     * Display the specified resource.

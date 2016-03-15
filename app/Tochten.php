@@ -9,4 +9,7 @@ class Tochten extends Model
      protected $fillable=[
         'tochtnaam'
     ];
+    protected $table = 'tochten';
+
+    
 }

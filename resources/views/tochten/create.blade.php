@@ -10,7 +10,7 @@
     </div>
     <div>
         {!! Form::label('Tochtnaam', 'Tochtnaam:') !!}
-        {!! Form::text('Tochtnaam'); !!}
+        {!! Form::text('tochtnaam'); !!}
     </div>
     <div>
         {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
