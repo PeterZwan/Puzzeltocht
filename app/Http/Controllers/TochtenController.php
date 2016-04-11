@@ -27,9 +27,9 @@ class TochtenController extends Controller {
     */
    public function store()
    {
-     $tocht = Request::all();
-     Tocht::create($tocht);
-     return redirect('tochten');
+   	$tocht=Request::all();
+   	Tochten::create($tocht);
+   	return redirect('tochten');
    }
    /**
     * Display the specified resource.
@@ -39,7 +39,8 @@ class TochtenController extends Controller {
     */
    public function show($id)
    {
-      
+      $tocht=tochten::find($id);
+      return view('tochten.show',compact('tocht'));
    }
 
    /**
@@ -50,7 +51,8 @@ class TochtenController extends Controller {
     */
    public function edit($id)
    {
-      
+   	  $tocht=tochten::find($id);
+      return view('tochten.edit',compact('tocht'));
    }
    /**
     * Update the specified resource in storage.
@@ -60,7 +62,10 @@ class TochtenController extends Controller {
     */
    public function update($id)
    {
-    
+     $input=Request::all();
+     $tocht=tochten::find($id);
+     $tocht->update($input);
+     return redirect('tochten');
    }
    /**
     * Remove the specified resource from storage.
@@ -70,7 +75,8 @@ class TochtenController extends Controller {
     */
    public function destroy($id)
    {
-      
+      Tochten::find($id)->delete();
+      return redirect('tochten');
    }
 }
 
